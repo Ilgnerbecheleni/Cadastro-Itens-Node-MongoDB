@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+            crossorigin="anonymous">
+    </head>
+    <body>
+        <div class="container">
+            <form id="login-form" class="form">
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" class="form-control" id="email"
+                        name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Senha:</label>
+                    <input type="password" class="form-control" id="password"
+                        name="password" required>
+                </div>
+                <input type="button" class="btn btn-primary" value="Login"
+                    onclick="submitForm()">
+            </form>
+        </div>
+    </body>
+    <script>
+        function submitForm() {
+            var formData = new FormData(document.getElementById("login-form"));
+            let formulario = document.getElementById("login-form") ;
+            var data = {
+                username: formData.get("email"),
+                password: formData.get("password")
+            };
+            fetch("http://localhost:3000/login", {
+                method: "POST",
+                body: JSON.stringify(data),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(function(response) {
+                if (!response.ok) {
+                    throw new Error("HTTP status " + response.status);
+                }
+                return response.json();
+            })
+            .then(function(response) {
+                localStorage.setItem("access_token", response.token);
+                localStorage.setItem("username",data.username);
+                console.log(response.token);
+                alert("Login realizado com sucesso!");
+                formulario.reset();
+                window.location.href = "cadastro.html";
+           
+            })
+            .catch(function(error) {
+                console.error(error);
+            });
+        }
+  </script>
+</html>
