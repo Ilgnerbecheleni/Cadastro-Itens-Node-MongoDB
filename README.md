@@ -4,6 +4,10 @@
 os dados cadastrados , porém , apenas mediante a autenticação .
 </p>
 
+
+
+
+<hr>
 <h1>Utilização da API </h1>
 
 <p>No visual Studio Code :</p>
@@ -51,5 +55,15 @@ Passe o objeto via método Post:
 Com a API rodando e configurada , acesse o arquivo HTML e faça o login no usuario e senha cadastrados anteriormente.
 </li>
 
+
+</ol>
+<hr>
+
+<h1>Utilizando o Sistema </h1>
+<ol>
+<li>Acesse o arquivo login.html ;</li>
+<li>Faça o login com usuario e senha cadastrado na API , vide tutorial de uso da API ;</li>
+<li>Com usuario logado irá retornar o token necessário para fazer a consulta na tabela itens ;</li>
+<li>Se o login estiver certo você será redirecionado para a tela de cadastro de itens .</li>
 
 </ol>
