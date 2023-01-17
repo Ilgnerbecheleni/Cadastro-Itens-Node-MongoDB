@@ -2,8 +2,12 @@
 
 <p>Aplicação simples e apenas didática de um pequeno CRUD com autenticação de usuário , utilizando uma API node + MongoDB , podemos cadastrar itens em uma tabela e visualizar
 os dados cadastrados , porém , apenas mediante a autenticação .
-</p>
 
+</p>
+<p>
+O sistema está em fase de desenvolvimento , e é apenas para didática .
+
+</p>
 
 
 
