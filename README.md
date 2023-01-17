@@ -24,7 +24,7 @@ O sistema está em fase de desenvolvimento , e é apenas para didática .
 npm install
 ```
 </li>
-<li>Instale o Mongo DB compass e configure uma conexão local</li>
+<li>Instale o Mongo DB compass e configure uma conexão local ;</li>
 <li>Certifique de que a conexão está configurada na api no arquivo api.js no trecho :
 
 ```
